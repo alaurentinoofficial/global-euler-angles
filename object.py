@@ -5,6 +5,9 @@ class Object:
     __rotation : EulerAngle
 
     def __set_rotation(self, rotation : EulerAngle):
+        if not isinstance(rotation, EulerAngle):
+            raise ValueError("The rotations needs to be a instace of EulerAngles")
+        
         self.__rotation = rotation
 
     position = property(lambda self: self.__position)
